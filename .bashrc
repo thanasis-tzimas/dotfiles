@@ -109,3 +109,5 @@ fi
 PS1='${debian_chroot:+($debian_chroot)}\w\$ '
 
 . "$HOME/.cargo/env"
+
+PATH=$PATH:/usr/local/go/bin
