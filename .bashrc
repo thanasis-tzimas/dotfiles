@@ -106,7 +106,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-PS1='${debian_chroot:+($debian_chroot)}\w\$ '
+PS1='${debian_chroot:+($debian_chroot)}\W$(__git_ps1 "(%s)")\$ '
 
 . "$HOME/.cargo/env"
 
