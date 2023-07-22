@@ -3,23 +3,24 @@ general {
 	interval = 5
 }
 
-order += "disk /"
+order += "wireless wlp0s20f3"
+order += "disk /home"
 order += "battery all"
-order += "load"
 order += "tztime local"
+
+wireless wlp0s20f3 {
+	format_up = "W: (%quality @ %essid: %bitrate)"
+	format_down = "W: down"
+}
 
 battery all {
 	format = "%status %percentage %remaining"
 }
 
 tztime local {
-	format = "%d-%m-%Y %H:%M:%S"
+	format = "%d/%m/%Y-%H:%M:%S"
 }
 
-load {
-	format = "%1min"
-}
-
-disk "/" {
+disk "/home" {
 	format = "%avail"
 }
