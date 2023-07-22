@@ -13,8 +13,8 @@ esac
 HISTCONTROL=ignoreboth
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=6000
+HISTFILESIZE=6000
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -105,4 +105,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+PS1='${debian_chroot:+($debian_chroot)}\w\$ '
+
 . "$HOME/.cargo/env"
