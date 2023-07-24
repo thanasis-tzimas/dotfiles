@@ -5,6 +5,7 @@ general {
 
 order += "wireless wlp0s20f3"
 order += "disk /home"
+order += "volume master"
 order += "battery all"
 order += "tztime local"
 
@@ -15,6 +16,14 @@ wireless wlp0s20f3 {
 
 battery all {
 	format = "%status %percentage %remaining"
+}
+
+volume master {
+	format = "VOL: %volume"
+	format_muted = "VOL: muted (%volume)"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
 }
 
 tztime local {
