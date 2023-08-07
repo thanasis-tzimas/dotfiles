@@ -13,21 +13,11 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#
-# You can uncomment the following line if you like using
-# window titles.
-# font pango:DejaVu Sans Mono 18
+font pango:DejaVu Sans Mono 14
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-
-
-# The following lines disable window titles
-# Comment them if you like them.
-for_window [class="^.*"] border pixel 2
-                          # class                 border  backgr. text    indicator child_border
-for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -59,13 +49,13 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminator
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn monospace
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'DejaVu Sans Mono-16'
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -88,7 +78,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+colon move right
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -197,9 +187,12 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-	position top
-        font pango:DejaVu Sans Mono 18
+        position top
+        font pango:DejaVu Sans Mono 14
+        separator_symbol ":"
 }
 
-exec_always --no-startup-id /usr/bin/feh --bg-scale '/home/sakis/Pictures/feynman_diagram_electron_positron_annihilation.svg'
+for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] client.focused #77dd77 #285577 #ffffff #2e9ef4 #285577
 
+exec --no-startup-id feh --bg-scale '/home/sakis/Downloads/Tux.png'
