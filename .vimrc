@@ -1,3 +1,4 @@
+filetype plugin indent on
 syntax on
 set title
 set tabstop=8
